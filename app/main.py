@@ -89,3 +89,6 @@ def get_build_info():
         info["deploy"] = status'''
 
     return info
+
+if __name__ == "__main__":
+    app.run()
