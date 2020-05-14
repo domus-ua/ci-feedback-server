@@ -8,7 +8,7 @@ server_user = User("dev", "dev")
 REST_API_ID = "18575706"
 MOBILE_ID = "18577476"
 WEB_ID = "18577488"
-COMPOSE_ID = ""
+COMPOSE_ID = "18784831"
 
 HEADER = {"PRIVATE-TOKEN": "ios4yeuCgN6sz3UJ-XVB"}
 
@@ -82,11 +82,10 @@ def get_build_info():
     if status is not None:
         info["mobile"] = status
 
-    '''
     # deploy
     status = fetch_build_state(COMPOSE_ID)
     if status is not None:
-        info["deploy"] = status'''
+        info["deploy"] = status
 
     return info
 
