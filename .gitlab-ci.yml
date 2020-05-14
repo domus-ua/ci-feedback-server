@@ -4,8 +4,10 @@ stages:
 deploy_production:
     stage: Deploy
     script:
-      - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/ci-flask-server.git
-      - git push heroku master
+      - apt-get update -qy
+      - apt-get install -y ruby-dev
+      - gem install dpl
+      - dpl --provider=heroku --app=ci-flask-server --api-key=$HEROKU_API_KEY
       - echo "Deployed to Production Server https://ci-flask-server.herokuapp.com"
     only:
       - master
